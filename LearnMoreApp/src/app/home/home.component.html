@@ -1,0 +1,90 @@
+<div class="outer-container">
+  <div class="glass-card">
+    <nav class="navbar navbar-expand-lg navbar-light mb-5">
+      <div class="container-fluid">
+        <a class="navbar-brand" routerLink="/home"> <img class="Home" src="assets/LearnMore-images/Logo.jpg" alt="home" width="50" height="50" /> LearnMore</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"> </span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav align-items-lg-center gap-lg-3">
+            <li class="nav-item" *ngIf="isLoggedIn()">
+              <button class="nav-link" (click)="goToCourses()"> View Courses</button>
+            </li>
+            <li class="nav-item" *ngIf="isLoggedIn()">
+              <button class="nav-link" (click)="goToAddCourse()"> Add Course</button>
+            </li>
+            <li class="nav-item" *ngIf="!isLoggedIn()">
+              <button class="btn btn-login btn-sm" routerLink="/login"> Log in</button>
+            </li>
+            <li class="nav-item" *ngIf="!isLoggedIn()">
+              <button class="btn btn-signup btn-sm" routerLink="/register"> Sign up</button>
+            </li>
+
+
+            <li class="nav-item" *ngIf="isLoggedIn()">
+              <button class="nav-link" (click)="goToMyLearnings()"> My Learnings</button>
+            </li>
+
+            <li class="nav-item" *ngIf="isLoggedIn()">
+              <a class="btn btn-logout btn-sm" (click)="logout()"> Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid landing-section">
+      <div class="row align-items-center">
+        <!-- Learn More Content -->
+        <div class=" col-md-6 hero-text">
+          <h1 class="fw-bold mb-4" style="font-family:Bahnschrift,sans-serif; cursor:pointer"> LEARN MORE</h1>
+          <p class="mb-4" style="font-size:20px">
+            Hey <span style="color:red"> hii!!</span> Welcome to<b> <i> LearnMore! </i> </b> <br />
+            Your one-stop platform to explore new skills,
+            enroll in curated courses, and confidently track your learning progress.
+            .
+
+          </p>
+          <button class="btn btn-learn" (click)="goToCourses()"> LEARN MORE</button>
+        </div>
+        <!-- Carousel -->
+        <div class="col-md-6">
+          <div id="learnCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
+
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="assets/sliding-images/2.webp" alt="cat" class="d-block w-100" />
+              </div>
+              <div class="carousel-item">
+                <img src="assets/sliding-images/3.webp" alt="elearning" class="d-block w-100" />
+              </div>
+              <div class="carousel-item ">
+                <img src="assets/sliding-images/4.webp" alt="flowChart" class="d-block w-100" />
+              </div>
+              <div class="carousel-item ">
+                <img src="assets/sliding-images/6.webp" alt="MachineLearning" class="d-block w-100" />
+              </div>
+              <div class="carousel-item ">
+                <img src="assets/sliding-images/5.webp" alt="quote" class="d-block w-100" />
+              </div>
+              <div class="carousel-item">
+                <img src="assets/sliding-images/7.webp" alt="laptop" class="d-block w-100" />
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+

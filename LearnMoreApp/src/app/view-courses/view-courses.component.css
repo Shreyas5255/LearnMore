@@ -1,0 +1,92 @@
+th {
+  padding: 20px 15px;
+  height: 70px;
+  vertical-align: middle;
+  background-color: antiquewhite;
+}
+
+.myContent {
+  background-color: #e8f3f1;
+  padding: 0px;
+  margin: 0px;
+}
+
+
+  .myContent h1 {
+    color: #2f4f4f;
+    margin-bottom: 0px;
+    padding-top: 20px;
+  }
+
+
+label {
+  color: #2f4f4f;
+  font-weight: 500;
+}
+
+
+.table-responsive {
+  background-color: #d9ebe7;
+  padding: 25px;
+  border-radius: 20px;
+}
+
+
+table {
+  background-color: #ffffff;
+  border-collapse: collapse;
+}
+
+
+  table tr:first-child th {
+    background-color: #c6e1dc;
+    color: #2f4f4f;
+    padding: 18px;
+    font-size: 20px;
+    border: 1px solid #9bbfba;
+  }
+
+
+  table td {
+    padding: 15px;
+    color: #4f6f6a;
+    border: 1px solid #9bbfba;
+  }
+
+
+.course-img {
+  border: 1px solid #2f4f4f;
+  border-radius: 12px;
+  padding: 6px;
+  background-color: #ffffff;
+}
+
+
+.btn {
+  transition: all 0.3s ease;
+}
+
+
+.update-btn:hover,
+.enroll-btn:hover {
+  background-color: #4f6f6a;
+  color: white;
+  border-color: #4f6f6a;
+}
+
+
+.delete-btn:hover {
+  background-color: #dc3545;
+  color: white;
+  border-color: #dc3545;
+}
+
+.delete-btn {
+  color: #dc3545;
+  border-color: #dc3545;
+}
+
+
+
+
+

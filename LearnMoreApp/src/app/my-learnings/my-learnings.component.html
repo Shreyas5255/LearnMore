@@ -1,0 +1,73 @@
+<div class="container-fluid min-vh-100 d-flex justify-content-center align-items center" style="padding-bottom:10%;padding-top:5%">
+  <br />
+  <div class="col-md-10 bg-white p-4 rounded shadow lg" style="background:linear-gradient(135deg,#c8f2ef,#5ec6c4)">
+
+    <h4 class="mb-3" style="text-align:center"> My Learnings</h4>
+    <!-- SEARCH SECTION -->
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <label for="courseId" class="form-label"> Course ID</label>
+        <input type="number" id="courseId"
+               class="form-control"
+               [(ngModel)]="courseId">
+      </div>
+
+      <div class="col-md-4">
+        <label for="enrolledDate" class="form-label"> Enrolled Date</label>
+        <input type="date" id="enrolledDate"
+               class="form-control"
+               [(ngModel)]="enrolledDate">
+      </div>
+
+      <div class="col-md-4 d-flex align-items-end gap-2">
+        <button class="btn w-100 mt-3" style="color:white; background-color:#064e4e" (click)="onSearch()">
+          Search
+        </button>
+        <button class="btn w-100 mt-3" style="color:white; background-color:#064e4e" (click)="onClear()">
+          Clear
+        </button>
+      </div>
+    </div>
+    <!-- TABLE -->
+    <div class="table-container mt-4">
+      <table class="table table-bordered table-hover custom-table" *ngIf="myLearnings && myLearnings.length > 0" style="border:1px solid black;text-align:center">
+
+        <thead>
+          <tr>
+            <th style="color: #1f3d3a"> MyLearning ID</th>
+            <th style="color: #1f3d3a"> Course ID</th>
+            <th style="color: #1f3d3a"> Enrolled Date</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let item of myLearnings">
+            <td>
+              {{item.myLearningId}}
+
+            </td>
+            <td>
+              {{item.courseId}}
+
+            </td>
+            <td>
+              {{item.enrolledDate | date:'dd-MM-yyyy'}}
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- NO DATA -->
+    <div class="alert alert-warning"
+         *ngIf="myLearnings && myLearnings.length === 0">
+      No My Learnings found
+    </div>
+
+  </div>
+</div>
+
+
+
+
+

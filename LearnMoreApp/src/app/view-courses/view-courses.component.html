@@ -1,0 +1,84 @@
+<div class="myContent">
+  <div style="text-align:center;">
+    <h1 style="font-family:'Global Sans Serif',sans-serif"> View Courses</h1>
+    <br />
+    <br />
+    <div class="row">
+      <div class="col-md-5" style="text-align:right">
+        <label for="searchInput"> Search :</label>
+      </div>
+      <div class="col-md-3">
+        <input type="text" name="search" id="searchInput" placeholder="Course Name" (input)="searchCourse(courseName.value)" class="form-control" #courseName />
+      </div>
+      <div class="col-sm-2" style="text-align:right;">
+        <label for="categorySelect"> Filter courses:</label>
+      </div>
+      <div class="col-md-2">
+        <select class="form-group" id="categorySelect" #categorydrop (change)=" searchCourseByCategory(categorydrop.value)">
+          <option value="0"> All Categories</option>
+          <option *ngFor="let category of categories" [value]="category.categoryId">
+            {{category.categoryName}}
+
+          </option>
+        </select>
+      </div>
+    </div>
+    <br />
+    <div class="table table-responsive table-bordered">
+      <table class="table" style="border:1px solid black;" *ngIf="filteredCourses && filteredCourses.length">
+        <tr style="font-size:15pt;font-family:'Times New Roman', Times, serif">
+          <th style="text-align:center;"> Course Id</th>
+          <th style="text-align:center;"> Course Name</th>
+          <th style="text-align:center;"> Course Category Id</th>
+          <th style="text-align:center;"> Skills To Be Gained</th>
+          <th style="text-align:center;"> Course Duration</th>
+          <th style="text-align:center;" colspan="2" *ngIf="isInstructor()"> Action(s)</th>
+
+          <th style="text-align:center;" *ngIf="isInstructor()"> Enroll Course</th>
+
+        </tr>
+        <tr *ngFor="let course of filteredCourses" style="background-color:white">
+          <td>
+            <img [src]="getCourseImage(course.courseId)"
+                 alt="Course"
+                 width="80"
+                 height="80" class="img-thumbnail rounded border border-dark" />
+          </td>
+          <td>
+            {{course.courseName}}
+
+          </td>
+          <td>
+            {{course.courseCategoryId}}
+
+          </td>
+          <td>
+            {{course.skillsToBeGained}}
+
+          </td>
+          <td>
+            {{course.courseDuration}}
+
+          </td>
+          <td style="text-align:center" *ngIf="isInstructor()">
+            <button title="Update Course" (click)="updateCourse(course)" class="btn btn-secondary update-btn"> Update</button>
+          </td>
+          <td style="text-align:center" *ngIf="isInstructor()">
+            <button title="Delete Course" (click)="deleteCourse(course.courseId)" class="btn btn-secondary delete-btn"> Delete</button>
+          </td>
+          <td style="text-align:center" *ngIf="isInstructor()">
+            <button title="Enroll Course" class="btn btn-secondary enroll-btn" (click)="enroll(course.courseId)"> Enroll</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div *ngIf="showMsgDiv">
+      <h4 class="bg-light p-5" style="text-align:center;"> No courses available</h4>
+    </div>
+  </div>
+</div>
+
+
+
+
+

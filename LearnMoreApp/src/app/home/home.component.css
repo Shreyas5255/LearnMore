@@ -1,0 +1,152 @@
+body {
+  background: #eaf6fa;
+  margin: 0;
+}
+
+.logo {
+  border-radius: 3rem;
+}
+
+
+.outer-container {
+  background: #78b7c3;
+  min-height: 100vh;
+  border-radius: 0;
+  padding: 40px;
+  width: 100%;
+}
+
+
+.glass-card {
+  background: linear-gradient( 135deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3) );
+  backdrop-filter: blur(20px);
+  border-radius: 40px;
+  padding: 40px;
+  padding-bottom: 200px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+
+  .glass-card::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(0, 150, 180, 0.4), transparent 70%);
+    top: -100px;
+    right: -100px;
+    border-radius: 50%;
+  }
+
+  .glass-card::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(0, 150, 180, 0.3), transparent 70%);
+    bottom: -80px;
+    left: -80px;
+    border-radius: 50%;
+  }
+
+.navbar .btn {
+  font-weight: 400;
+  transition: transform 0.25s ease, font-weight 0.25s ease;
+}
+
+  .navbar .btn:hover {
+    transform: scale(1.15);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+
+
+.navbar .nav-item {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .nav-link {
+  transform: scale(1.08);
+  font-weight: 400;
+  transition: transform 0.25s ease, font-weight 0.25s ease;
+}
+
+  .navbar .nav-link:hover {
+    color: black;
+    letter-spacing: 0.5px;
+    transform: scale(1.15);
+    font-weight: 700;
+  }
+
+.btn-login {
+  border: 2px solid #2b5d66;
+  color: #2b5d66;
+  border-radius: 20px;
+}
+
+.btn-logout:hover {
+  border: 2px solid red;
+  color: red;
+  border-radius: 20px;
+}
+
+.btn-signup {
+  background-color: #2b5d66;
+  color: white;
+  border-radius: 20px;
+}
+
+.btn-learn {
+  padding: 14px 40px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #000000;
+  text-transform: uppercase;
+  border-radius: 40px;
+  cursor: pointer;
+  background: linear-gradient(#ffffff, #ffffff) padding-box, linear-gradient(90deg, #12b3e6, #2ee59d) border-box;
+  border: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+
+  .btn-learn:hover {
+    background: linear-gradient(90deg, #12b3e6, #2ee59d);
+    color: #000000;
+  }
+
+.hero-text {
+  color: #2b5d66;
+  position: relative;
+  z-index: 2;
+}
+
+.landing-section {
+  padding: 80px 60px;
+}
+
+
+.subtitle {
+  font-size: 18px;
+  color: #555;
+  margin: 20px 0 30px;
+}
+
+.carousel img {
+  height: 360px;
+  object-fit: fill;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+
+
+

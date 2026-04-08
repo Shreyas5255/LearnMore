@@ -1,0 +1,14 @@
+C:\Users\user\Desktop\LearnMore\LearnMoreDAL\bin\Debug\net8.0\LearnMoreDAL.deps.json
+C:\Users\user\Desktop\LearnMore\LearnMoreDAL\bin\Debug\net8.0\LearnMoreDAL.runtimeconfig.json
+C:\Users\user\Desktop\LearnMore\LearnMoreDAL\bin\Debug\net8.0\LearnMoreDAL.dll
+C:\Users\user\Desktop\LearnMore\LearnMoreDAL\bin\Debug\net8.0\LearnMoreDAL.pdb
+C:\Users\user\Desktop\LearnMore\LearnMoreDAL\obj\Debug\net8.0\LearnMoreDAL.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\LearnMore\LearnMoreDAL\obj\Debug\net8.0\LearnMoreDAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\LearnMore\LearnMoreDAL\obj\Debug\net8.0\LearnMoreDAL.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\LearnMore\LearnMoreDAL\obj\Debug\net8.0\LearnMoreDAL.AssemblyInfo.cs
+C:\Users\user\Desktop\LearnMore\LearnMoreDAL\obj\Debug\net8.0\LearnMoreDAL.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\LearnMore\LearnMoreDAL\obj\Debug\net8.0\LearnMoreDAL.dll
+C:\Users\user\Desktop\LearnMore\LearnMoreDAL\obj\Debug\net8.0\refint\LearnMoreDAL.dll
+C:\Users\user\Desktop\LearnMore\LearnMoreDAL\obj\Debug\net8.0\LearnMoreDAL.pdb
+C:\Users\user\Desktop\LearnMore\LearnMoreDAL\obj\Debug\net8.0\LearnMoreDAL.genruntimeconfig.cache
+C:\Users\user\Desktop\LearnMore\LearnMoreDAL\obj\Debug\net8.0\ref\LearnMoreDAL.dll

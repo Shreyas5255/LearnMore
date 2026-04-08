@@ -1,0 +1,119 @@
+<div class="container-fluid min-vh-100 d-flex justify-content-center align-items-center" style="padding-bottom:30%;padding-top:5%">
+  <br />
+  <div class="col-md-8 bg-white p-4 rounded shadow lg" style="background:linear-gradient(135deg,#c8f2ef,#5ec6c4)">
+
+    <form #addCourseForm="ngForm" (ngSubmit)="addCourse(addCourseForm)">
+      <div class="row">
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-6">
+          <h2 style="text-align:center; color:#064e4e;font-weight:bold;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif"> Add Course</h2>
+          <br />
+          <h6 style="text-align:right;color:dimgrey"> <sup style="color:red"> *</sup> All fields are mandatory</h6>
+          <div class="form-group">
+            <div class="col" style="text-align:left">
+              <label for="courseName"> Course Name<sup style="color:red"> *</sup> </label>
+            </div>
+            <div class="col; input-group">
+              <input type="text" name="courseName" placeholder="Course Name" #courseName="ngModel" class="form-control qkinput"
+                     ngModel required pattern="^(?![0-9])(?=.*[A-Za-z])[A-Za-z0-9 ]{1,20}$">
+            </div>
+            <div *ngIf="courseName.errors && (courseName.dirty || courseName.touched)" style="text-align:left; padding-top:5px; color:red;">
+              <div [hidden]="!courseName?.errors?.['required']">
+                <p> &nbsp;Course Name is mandatory</p>
+              </div>
+              <div [hidden]="!courseName?.errors?.['pattern']">
+                <p> &nbsp;Course Name should contain only alphabets</p>
+              </div>
+            </div>
+            <br />
+
+            <div class="form-group">
+              <div class="col" style="text-align:left">
+                <label for="courseCategoryId"> Course Category<sup style="color:red"> *</sup> </label>
+              </div>
+              <div class="col">
+                <select class="form-select" name="courseCategoryId" #courseCategoryId="ngModel" ngModel required>
+                  <option *ngFor="let category of categories" [value]="category.categoryId">
+                    {{ category.categoryName }}
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <br />
+
+          <div class="form-group">
+            <div class="col" style="text-align:left">
+              <label for="courseDurationValue"> Course Duration<sup style="color:red"> *</sup> </label>
+            </div>
+            <div class="col input-group">
+
+              <input type="number"
+                     name="courseDurationValue"
+                     #courseDurationValue="ngModel"
+                     class="form-control"
+                     required
+                     min="1"
+                     ngModel>
+
+              <select name="courseDurationUnit"
+                      #courseDurationUnit="ngModel"
+                      class="form-control"
+                      required
+                      ngModel>
+                <option value=""> Select</option>
+                <option value="Min"> Minutes</option>
+                <option value="Hours"> Hours</option>
+                <option value="Days"> Days</option>
+                <option value="Months"> Months</option>
+
+              </select>
+
+            </div>
+
+            <div *ngIf="(courseDurationValue.errors && (courseDurationValue.dirty || courseDurationValue.touched))||
+(courseDurationUnit.errors && (courseDurationUnit.dirty || courseDurationUnit.touched))"
+                 class="text-danger">
+              Duration is mandatory.
+            </div>
+          </div>
+          <br />
+
+          <div class="form-group">
+            <div class="col" style="text-align:left">
+              <label for="skilsToBeGained"> Skills Gained<sup style="color:red"> *</sup> </label>
+            </div>
+            <div class="col input-group">
+              <input type="text" name="skillsToBeGained" placeholder="Skills Gained(Use ',' to seperate the skills)" #skillsToBeGained="ngModel" class="form-control"
+                     ngModel required pattern="^(?=.*[A-Za-z])[A-Za-z][A-Za-z0-9#.+]*(?: [A-Za-z0-9#.+]+)*(?:,\s?[A-Za-z][A-Za-z0-9#.+]*(?: [A-Za-z0-9#.+]+)*)*$">
+            </div>
+            <div *ngIf="skillsToBeGained.errors && (skillsToBeGained.dirty || skillsToBeGained.touched)" style="text-align:left; padding-top:5px; color:red;">
+              <div [hidden]="!skillsToBeGained?.errors?.['required']">
+                <p> &nbsp;Skills is/are mandatory</p>
+              </div>
+              <div [hidden]="!skillsToBeGained?.errors?.['pattern']">
+                <p> &nbsp;Please enter valid skills</p>
+              </div>
+            </div>
+          </div>
+          <br />
+
+          <div class="form-group" style="text-align:center">
+            <button type="submit" class="btn w-100 mt-3" style="color:white; background-color:#064e4e" [disabled]="!addCourseForm.valid"> Add</button>
+            <br />
+            <button type="reset" class="btn w-100 mt-3" style="color:#424242; background-color:#E0E0E0"> Reset</button>
+          </div>
+          <br />
+        </div>
+
+        <div class="col-md-3">
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+

@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\LearnMoreApp",
+    "\\LearnMoreApp\\src",
+    "\\LearnMoreApp\\src\\app",
+    "\\LearnMoreApp\\src\\app\\my-learnings",
+    "\\LearnMoreApp\\src\\assets",
+    "\\LearnMoreDAL"
+  ],
+  "SelectedNode": "\\LearnMoreApp\\src\\app\\app-routing.module.ts",
+  "PreviewInSolutionExplorer": false
+}

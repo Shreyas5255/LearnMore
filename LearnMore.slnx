@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="LearnMoreDAL/LearnMoreDAL.csproj" />
+  <Project Path="LearnMoreServices/LearnMoreServices.csproj" />
+  <Project Path="LearnMoreTestApp/LearnMoreTestApp.csproj" />
+</Solution>

@@ -1,0 +1,167 @@
+<div class="container-fluid min-vh-100 d-flex justify-content-center align-items center" style="padding-bottom:30%;padding-top:5%">
+  <br />
+  <div class="col-md-8 bg-white p-4 rounded shadow lg" style="background:linear-gradient(135deg,#c8f2ef,#5ec6c4)">
+    <form #updateCourseForm="ngForm" (ngSubmit)="updateCourse(courName.value,courCatId.value,courDurationValue.value + ' ' + courDurationUnit.value,skillsGained.value)">
+      <div class="row">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-6">
+          <h4 style="text-align:center; color:#064e4e;font-family:'Franklin Gothic',sans-serif;font-size:35px">Update Course</h4>
+          <h6 style="text-align:right;color:dimgrey;font-size:small"><sup style="color:red">*</sup>All fields are mandatory</h6>
+          <div class="form-group">
+            <div class="col" style="text-align:left">
+              <label for="courseId">Course Id</label>
+            </div>
+            <div class="col; input-group">
+              <input type="number"
+                     name="courseId"
+                     [(ngModel)]="courseId"
+                     class="form-control"
+                     readonly>
+            </div>
+          </div>
+          <br />
+
+          <div class="form-group">
+            <div class="col" style="text-align:left">
+              <label for="courName">Course Name<sup style="color:red">*</sup></label>
+            </div>
+            <div class="col; input-group">
+
+              <input type="text"
+                     name="courName"
+                     #courName="ngModel"
+                     class="form-control"
+                     required pattern="^(?![0-9])(?=.*[A-Za-z])[A-Za-z0-9 ]{2,20}$"
+                     ngModel>
+            </div>
+            <div *ngIf="courName.errors && (courName.dirty || courName.touched)"
+                 class="text-danger">
+              <div [hidden]="!courName?.errors?.['required']">
+                Course Name is Mandatory
+              </div>
+
+            </div>
+            <div *ngIf="courName.errors && (courName.dirty || courName.touched)" class="text-danger">
+              <div [hidden]="!courName?.errors?.['pattern']">
+                Course Name  should not start with digits.
+              </div>
+            </div>
+
+
+          </div>
+          <br />
+
+          <div class="form-group">
+            <div class="col" style="text-align:left">
+              <label for="courCatId">Course CategoryId<sup style="color:red">*</sup></label>
+            </div>
+            <div class="col; input-group">
+              <input type="number"
+                     name="courCatId"
+                     #courCatId="ngModel"
+                     class="form-control"
+                     required
+                     min="1"
+                     max="5"
+                     ngModel>
+            </div>
+            <div *ngIf="courCatId.errors && (courCatId.dirty || courCatId.touched)"
+                 class="text-danger">
+              <div [hidden]="!courCatId?.errors?.['required']">
+                Category is mandatory
+              </div>
+            </div>
+            <div *ngIf="courCatId.errors && (courCatId.dirty || courCatId.touched)"
+                 class="text-danger">
+              <div [hidden]="!courCatId?.errors?.['max']">
+                CategoryId is Greater than total Category
+              </div>
+            </div>
+            <div *ngIf="courCatId.errors && (courCatId.dirty || courCatId.touched)"
+                 class="text-danger">
+              <div [hidden]="!courCatId?.errors?.['min']">
+                CategoryId is Lesser than total Category
+              </div>
+            </div>
+          </div>
+          <br />
+
+          <div class="form-group">
+            <div class="col" style="text-align:left">
+              <label for="courDurationValue">Course Duration<sup style="color:red">*</sup></label>
+            </div>
+
+            <div class="col input-group">
+
+              <input type="number"
+                     name="courDurationValue"
+                     #courDurationValue="ngModel"
+                     class="form-control"
+                     required
+                     min="1"
+                     ngModel>
+
+              <select name="courDurationUnit"
+                      #courDurationUnit="ngModel"
+                      class="form-control"
+                      required
+                      ngModel>
+                <option value="">Select</option>
+                <option value="Min">Minutes</option>
+                <option value="Hours">Hours</option>
+                <option value="Days">Days</option>
+                <option value="Months">Months</option>
+
+              </select>
+
+            </div>
+
+            <div *ngIf="(courDurationValue.errors && (courDurationValue.dirty || courDurationValue.touched))||
+                 (courDurationUnit.errors && (courDurationUnit.dirty || courDurationUnit.touched))"
+                 class="text-danger">
+              Duration is mandatory.
+            </div>
+          </div>
+          <br />
+
+          <div class="form-group">
+            <div class="col" style="text-align:left">
+              <label for="skillsGained">Skills To Be Gained<sup style="color:red">*</sup></label>
+            </div>
+            <div class="col; input-group">
+              <input type="text" name="skillsGained" #skillsGained="ngModel" class="form-control qkinput"
+                     pattern="^(?=.*[A-Za-z])[A-Za-z0-9#.+]*(?:[A-Za-z][A-Za-z0-9#.+]*)(?: [A-Za-z0-9#.+]+)*(?:,\s*[A-Za-z0-9#.+]*(?:[A-Za-z][A-Za-z0-9#.+]*)(?: [A-Za-z0-9#.+]+)*)*$" required ngModel>
+            </div>
+            <div *ngIf="skillsGained.errors && (skillsGained.dirty || skillsGained.touched)" class="text-danger">
+              <div [hidden]="!skillsGained?.errors?.['required']">
+                Skills is/are  Mandatory.
+              </div>
+            </div>
+            <div *ngIf="skillsGained.errors && (skillsGained.dirty || skillsGained.touched)" class="text-danger">
+              <div [hidden]="!skillsGained?.errors?.['pattern']">
+                Valid Skills should be entered.
+              </div>
+            </div>
+
+          </div>
+          <br />
+
+          <div class="form-group" style="text-align:left">
+            <button type="submit" [disabled]="updateCourseForm.invalid" class="btn w-100 mt-3" style="color:white; background-color:#064e4e">Update Course</button>
+            <br />
+            <button type="reset" class="btn w-100 mt-3" style="color:#424242; background-color:#E0E0E0">Reset</button>
+          </div>
+        </div>
+        <div class="col-md-3">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
